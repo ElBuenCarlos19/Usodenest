@@ -1,11 +1,16 @@
-export const square = () => {
-
+export const Square = ( {onSubmit} ) => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        onSubmit(email, password);
+      };
     
     return (
 
         <div className="bg-black p-8 rounded-lg shadow-md w-96">
             <h1 className="text-2xl font-semibold mb-4">Iniciar sesión</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label for="email" className="block text-sm font-medium text-white-700">Correo electrónico</label>
                     <input type="email" id="email" class="mt-1 p-2 w-full border rounded-md text-black" />

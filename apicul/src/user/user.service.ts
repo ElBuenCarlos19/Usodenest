@@ -18,7 +18,6 @@ export class UserService {
   }
   @Get()
   findAll() {
-    console.log(process.env.DB_HOST);
     return this.usersRepository.find()
   }
 
